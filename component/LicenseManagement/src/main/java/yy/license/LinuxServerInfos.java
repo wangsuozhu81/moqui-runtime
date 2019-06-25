@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 /**
  * 用于获取客户Linux服务器的基本信息
  *
- * @author zifangsky
- * @date 2018/4/23
+ * @author ying yuan
+ * @date 2019/6/25
  * @since 1.0.0
  */
 public class LinuxServerInfos extends AbstractServerInfos {

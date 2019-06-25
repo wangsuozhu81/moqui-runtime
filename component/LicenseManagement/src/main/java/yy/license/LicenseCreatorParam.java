@@ -8,8 +8,8 @@ import java.util.Date;
 /**
  * License生成类需要的参数
  *
- * @author zifangsky
- * @date 2018/4/19
+ * @author ying yuan
+ * @date 2019/6/25
  * @since 1.0.0
  */
 public class LicenseCreatorParam implements Serializable {
