@@ -22,8 +22,16 @@
 # common runtime added files
 /classes/*.pem
 /lib/*.jar
-/component/
 /ecomponent/
+/component/example
+/component/HiveMind
+/component/mantle-udm
+/component/mantle-usl
+/component/moqui-camel
+/component/moqui-elasticsearch
+/component/moqui-fop
+/component/PopCommerce
+/component/SimpleScreens
 /mantle/
 
 # jackrabbit standalone jar file
