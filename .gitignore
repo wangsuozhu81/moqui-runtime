@@ -10,9 +10,7 @@
 /db/h2/
 /db/orientdb/databases/
 /db/snapshot/
-/elasticsearch/data/
-/elasticsearch/log/
-/elasticsearch/work/
+/elasticsearch*/
 /jackrabbit/jackrabbit/
 /log/
 /sessions/
@@ -32,6 +30,12 @@
 /component/moqui-fop
 /component/PopCommerce
 /component/SimpleScreens
+/component/tutorial
+/component/LicenseManagement
+/component/PopRestStore
+/component/Agreement
+/component/Configuration
+/component/Util
 /mantle/
 
 # jackrabbit standalone jar file
