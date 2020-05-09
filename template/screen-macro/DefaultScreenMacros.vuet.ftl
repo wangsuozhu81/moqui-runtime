@@ -640,7 +640,7 @@ ${sri.renderIncludeScreen(.node["@location"], .node["@share-scope"]!)}
                 </#if>
                 <#if currentFindUrlParms?has_content>
                     <div><m-form class="form-inline" id="${formId}_NewFind" action="${formSaveFindUrl}">
-                        <input type="hidden" name="formLocation" value="${formInstance.getFormLocation()}">
+                        <input type="hidden" name="formLocation" value="${formListInfo.getSavedFindFullLocation()}">
                         <#list currentFindUrlParms.keySet() as parmName>
                             <input type="hidden" name="${parmName}" value="${currentFindUrlParms.get(parmName)!?html}">
                         </#list>
@@ -664,7 +664,7 @@ ${sri.renderIncludeScreen(.node["@location"], .node["@share-scope"]!)}
                     <div>
                     <#if currentFindUrlParms?has_content>
                         <m-form class="form-inline" id="${saveFindFormId}" action="${formSaveFindUrl}">
-                            <input type="hidden" name="formLocation" value="${formListInfo.getFormLocation()}">
+                            <input type="hidden" name="formLocation" value="${formListInfo.getSavedFindFullLocation()}">
                             <input type="hidden" name="formListFindId" value="${formListFind.formListFindId}">
                             <#list currentFindUrlParms.keySet() as parmName>
                                 <input type="hidden" name="${parmName}" value="${currentFindUrlParms.get(parmName)!?html}">
@@ -912,8 +912,7 @@ ${sri.renderIncludeScreen(.node["@location"], .node["@share-scope"]!)}
     <#assign isPaginated = (!(formNode["@paginate"]! == "false") && context[listName + "Count"]?? && (context[listName + "Count"]! > 0) &&
             (!formNode["@paginate-always-show"]?has_content || formNode["@paginate-always-show"]! == "true" || (context[listName + "PageMaxIndex"] > 0)))>
     <#if (isHeaderDialog || isSavedFinds || isSelectColumns || isPaginated) && hideNav! != "true">
-        <tr class="form-list-nav-row"><th colspan="${numColumns}">
-        <nav class="form-list-nav">
+        <tr class="form-list-nav-row"><th colspan="${numColumns}"><nav class="form-list-nav">
             <#if isSavedFinds>
                 <#assign userFindInfoList = formListInfo.getUserFormListFinds(ec)>
                 <#if userFindInfoList?has_content>
@@ -1003,8 +1002,7 @@ ${sri.renderIncludeScreen(.node["@location"], .node["@share-scope"]!)}
                     <h4 class="text-warning" style="display:inline-block;padding-top:2px;">${ec.getL10n().localize("No results found")}</h4>
                 </#if>
             </#if>
-        </nav>
-        </th></tr>
+        </nav></th></tr>
 
         <#if isHeaderDialog>
         <tr><th colspan="${numColumns}" style="font-weight: normal">
@@ -1356,7 +1354,7 @@ ${sri.renderIncludeScreen(.node["@location"], .node["@share-scope"]!)}
                 <form-paginate :paginate="{ count:${context[listName + "Count"]?c}, pageIndex:${context[listName + "PageIndex"]?c},<#rt>
                     <#t> pageSize:${context[listName + "PageSize"]?c}, pageMaxIndex:${context[listName + "PageMaxIndex"]?c},
                     <#lt> pageRangeLow:${context[listName + "PageRangeLow"]?c}, pageRangeHigh:${context[listName + "PageRangeHigh"]?c} }"></form-paginate>
-            </nav></td></tr>
+            </nav></th></tr>
         </#if>
         <#if !isServerStatic></tbody></#if>
         <#assign ownerForm = "">
@@ -1614,7 +1612,7 @@ a => A, d => D, y => Y
     <date-time id="<@fieldId .node/>" name="<@fieldName .node/>" value="${fieldValue?html}" type="${.node["@type"]!""}" size="${.node["@size"]!""}"<#rt>
         <#t><#if .node?parent["@tooltip"]?has_content> tooltip="${ec.getResource().expand(.node?parent["@tooltip"], "")}"</#if>
         <#t><#if ownerForm?has_content> form="${ownerForm}"</#if><#if javaFormat?has_content> format="<@getMomentDateFormat javaFormat/>"</#if>
-        <#t><#if validationClasses?contains("required")> required="required"</#if> auto-year="${.node["@auto-year"]!"true"}"/>
+        <#t><#if validationClasses?contains("required")> required="required"</#if> auto-year="${.node["@auto-year"]!"true"}" :minuteStep="${.node["@minute-stepping"]!"5"}"/>
 </#macro>
 
 <#macro display>
