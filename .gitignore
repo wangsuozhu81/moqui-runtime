@@ -36,6 +36,7 @@
 /component/Agreement
 /component/Configuration
 /component/Util
+
 /mantle/
 
 # jackrabbit standalone jar file
