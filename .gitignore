@@ -30,6 +30,13 @@
 /component/moqui-fop
 /component/PopCommerce
 /component/SimpleScreens
+/component/tutorial
+/component/LicenseManagement
+/component/PopRestStore
+/component/Agreement
+/component/Configuration
+/component/Util
+
 /mantle/
 
 # jackrabbit standalone jar file
