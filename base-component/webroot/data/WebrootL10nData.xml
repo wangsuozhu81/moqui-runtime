@@ -16,8 +16,8 @@ along with this software (see the LICENSE.md file). If not, see
     <moqui.basic.LocalizedMessage locale="default" original="PaginationTemplate"
             localized="Page ${curPageIndex + 1} of ${curPageMaxIndex + 1} (${context[listName + 'PageRangeLow']} - ${context[listName + 'PageRangeHigh']} of ${context[listName + 'Count']})"/>
 
-    <moqui.basic.LocalizedMessage original="Choose an Application" locale="en" localized="Choose an Application"/>
-    <moqui.basic.LocalizedMessage original="Choose an Application" locale="zh" localized="选择一个应用"/>
+    <moqui.basic.LocalizedMessage original="Choose an Application" locale="en" localized="Y&amp;Y Insight Enterprise Application Platform "/>
+    <moqui.basic.LocalizedMessage original="Choose an Application" locale="zh" localized="和英智远企业应用平台"/>
 
     <moqui.basic.LocalizedMessage original="Applications" locale="en" localized="Applications"/>
     <moqui.basic.LocalizedMessage original="Applications" locale="zh" localized="应用"/>
