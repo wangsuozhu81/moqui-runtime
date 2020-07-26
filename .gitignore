@@ -26,16 +26,15 @@
 /component/mantle-udm
 /component/mantle-usl
 /component/moqui-camel
-/component/moqui-elasticsearch
 /component/moqui-fop
+/component/moqui-quasar
 /component/PopCommerce
 /component/SimpleScreens
-/component/tutorial
-/component/LicenseManagement
 /component/PopRestStore
-/component/Agreement
-/component/Configuration
-/component/Util
+/component/YyAgreement
+/component/YyConfiguration
+/component/YyUtils
+/component/YyWMS
 
 /mantle/
 
