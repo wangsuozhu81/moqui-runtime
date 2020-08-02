@@ -17,84 +17,35 @@ along with this software (see the LICENSE.md file). If not, see
             localized="Page ${curPageIndex + 1} of ${curPageMaxIndex + 1} (${context[listName + 'PageRangeLow']} - ${context[listName + 'PageRangeHigh']} of ${context[listName + 'Count']})"/>
 
     <moqui.basic.LocalizedMessage original="Choose an Application" locale="en" localized="Y&amp;Y Insight Enterprise Application Platform "/>
-    <moqui.basic.LocalizedMessage original="Choose an Application" locale="zh" localized="和英智远企业应用平台"/>
-
-    <moqui.basic.LocalizedMessage original="Applications" locale="en" localized="Applications"/>
-    <moqui.basic.LocalizedMessage original="Applications" locale="zh" localized="应用"/>
-
-    <moqui.basic.LocalizedMessage original="App List" locale="en" localized="App List"/>
-    <moqui.basic.LocalizedMessage original="App List" locale="zh" localized="应用列表"/>
-
-    <moqui.basic.LocalizedMessage original="No results found" locale="en" localized="No results found"/>
-    <moqui.basic.LocalizedMessage original="No results found" locale="zh" localized="查无数据"/>
-
-    <moqui.basic.LocalizedMessage original="Find Options" locale="en" localized="Find Options"/>
-    <moqui.basic.LocalizedMessage original="Find Options" locale="zh" localized="查询选项"/>
-
-    <moqui.basic.LocalizedMessage original="Columns" locale="en" localized="Columns"/>
-    <moqui.basic.LocalizedMessage original="Columns" locale="zh" localized="显示列"/>
-
-    <moqui.basic.LocalizedMessage original="CSV" locale="en" localized="CSV"/>
-    <moqui.basic.LocalizedMessage original="CSV" locale="zh" localized="导出CSV"/>
-
-    <moqui.basic.LocalizedMessage original="Text" locale="en" localized="Text"/>
-    <moqui.basic.LocalizedMessage original="Text" locale="zh" localized="导出Text"/>
-
-    <moqui.basic.LocalizedMessage original="PDF" locale="en" localized="PDF"/>
-    <moqui.basic.LocalizedMessage original="PDF" locale="zh" localized="导出PDF"/>
-
-    <moqui.basic.LocalizedMessage original="Clear Parameters" locale="en" localized="Clear Parameters"/>
-    <moqui.basic.LocalizedMessage original="Clear Parameters" locale="zh" localized="清空"/>
-
-    <moqui.basic.LocalizedMessage original="Order By" locale="en" localized="Order By"/>
-    <moqui.basic.LocalizedMessage original="Order By" locale="zh" localized="排序"/>
-
-    <moqui.basic.LocalizedMessage original="Column Fields" locale="en" localized="Column Fields"/>
-    <moqui.basic.LocalizedMessage original="Column Fields" locale="zh" localized="列字段"/>
-
-    <moqui.basic.LocalizedMessage original="Drag fields to the desired column or do not display" locale="en" localized="Drag fields to the desired column or do not display"/>
-    <moqui.basic.LocalizedMessage original="Drag fields to the desired column or do not display" locale="zh" localized="拖动列到相应位置以显示或隐藏"/>
-
-    <moqui.basic.LocalizedMessage original="Do Not Display" locale="en" localized="Do Not Display"/>
-    <moqui.basic.LocalizedMessage original="Do Not Display" locale="zh" localized="隐藏"/>
-
-    <moqui.basic.LocalizedMessage original="Column" locale="en" localized="Column"/>
-    <moqui.basic.LocalizedMessage original="Column" locale="zh" localized="列"/>
-
-    <moqui.basic.LocalizedMessage original="Save Columns" locale="en" localized="Save Columns"/>
-    <moqui.basic.LocalizedMessage original="Save Columns" locale="zh" localized="保存"/>
-
-    <moqui.basic.LocalizedMessage original="Reset to Default" locale="en" localized="Reset to Default"/>
-    <moqui.basic.LocalizedMessage original="Reset to Default" locale="zh" localized="重置"/>
-
-    <moqui.basic.LocalizedMessage original="Not" locale="en" localized="Not"/>
-    <moqui.basic.LocalizedMessage original="Not" locale="zh" localized="不"/>
-    <moqui.basic.LocalizedMessage original="Contains" locale="en" localized="Contains"/>
-    <moqui.basic.LocalizedMessage original="Contains" locale="zh" localized="包含"/>
-    <moqui.basic.LocalizedMessage original="Equals" locale="en" localized="Equals"/>
-    <moqui.basic.LocalizedMessage original="Equals" locale="zh" localized="等于"/>
-    <moqui.basic.LocalizedMessage original="Like" locale="en" localized="Like"/>
-    <moqui.basic.LocalizedMessage original="Like" locale="zh" localized="相似"/>
-    <moqui.basic.LocalizedMessage original="Begins With" locale="en" localized="Begins With"/>
-    <moqui.basic.LocalizedMessage original="Begins With" locale="zh" localized="以...开始"/>
-    <moqui.basic.LocalizedMessage original="Empty" locale="en" localized="Empty"/>
-    <moqui.basic.LocalizedMessage original="Empty" locale="zh" localized="为空"/>
-    <moqui.basic.LocalizedMessage original="Ignore Case" locale="en" localized="Ignore Case"/>
-    <moqui.basic.LocalizedMessage original="Ignore Case" locale="zh" localized="忽略大小写"/>
-
-    <moqui.basic.LocalizedMessage original="This" locale="en" localized="This"/>
-    <moqui.basic.LocalizedMessage original="This" locale="zh" localized="当前"/>
-    <moqui.basic.LocalizedMessage original="Next" locale="en" localized="Next"/>
-    <moqui.basic.LocalizedMessage original="Next" locale="zh" localized="未来"/>
-    <moqui.basic.LocalizedMessage original="Last" locale="en" localized="Last"/>
-    <moqui.basic.LocalizedMessage original="Last" locale="zh" localized="过去"/>
-
-    <moqui.basic.LocalizedMessage original="Day" locale="en" localized="Day"/>
-    <moqui.basic.LocalizedMessage original="Day" locale="zh" localized="天"/>
-    <moqui.basic.LocalizedMessage original="Days" locale="en" localized="Days"/>
-    <moqui.basic.LocalizedMessage original="Days" locale="zh" localized="天"/>
-    <moqui.basic.LocalizedMessage original="Week" locale="en" localized="Week"/>
-    <moqui.basic.LocalizedMessage original="Week" locale="zh" localized="周"/>
-    <moqui.basic.LocalizedMessage original="Weeks" locale="en" localized="Weeks"/>
-    <moqui.basic.LocalizedMessage original="Weeks" locale="zh" localized="周"/>
+    <moqui.basic.LocalizedMessage original="Choose an Application" locale="zh_CN" localized="和英智远企业应用平台"/>
+    <moqui.basic.LocalizedMessage original="Applications" locale="zh_CN" localized="应用"/>
+    <moqui.basic.LocalizedMessage original="App List" locale="zh_CN" localized="应用列表"/>
+    <moqui.basic.LocalizedMessage original="No results found" locale="zh_CN" localized="查无数据"/>
+    <moqui.basic.LocalizedMessage original="Find Options" locale="zh_CN" localized="查询选项"/>
+    <moqui.basic.LocalizedMessage original="Columns" locale="zh_CN" localized="显示列"/>
+    <moqui.basic.LocalizedMessage original="CSV" locale="zh_CN" localized="导出CSV"/>
+    <moqui.basic.LocalizedMessage original="Text" locale="zh_CN" localized="导出Text"/>
+    <moqui.basic.LocalizedMessage original="PDF" locale="zh_CN" localized="导出PDF"/>
+    <moqui.basic.LocalizedMessage original="Clear Parameters" locale="zh_CN" localized="清空"/>
+    <moqui.basic.LocalizedMessage original="Order By" locale="zh_CN" localized="排序"/>
+    <moqui.basic.LocalizedMessage original="Column Fields" locale="zh_CN" localized="列字段"/>
+    <moqui.basic.LocalizedMessage original="Drag fields to the desired column or do not display" locale="zh_CN" localized="拖动列到相应位置以显示或隐藏"/>
+    <moqui.basic.LocalizedMessage original="Do Not Display" locale="zh_CN" localized="隐藏"/>
+    <moqui.basic.LocalizedMessage original="Column" locale="zh_CN" localized="列"/>
+    <moqui.basic.LocalizedMessage original="Save Columns" locale="zh_CN" localized="保存"/>
+    <moqui.basic.LocalizedMessage original="Reset to Default" locale="zh_CN" localized="重置"/>
+    <moqui.basic.LocalizedMessage original="Not" locale="zh_CN" localized="不"/>
+    <moqui.basic.LocalizedMessage original="Contains" locale="zh_CN" localized="包含"/>
+    <moqui.basic.LocalizedMessage original="Equals" locale="zh_CN" localized="等于"/>
+    <moqui.basic.LocalizedMessage original="Like" locale="zh_CN" localized="相似"/>
+    <moqui.basic.LocalizedMessage original="Begins With" locale="zh_CN" localized="以...开始"/>
+    <moqui.basic.LocalizedMessage original="Empty" locale="zh_CN" localized="为空"/>
+    <moqui.basic.LocalizedMessage original="Ignore Case" locale="zh_CN" localized="忽略大小写"/>
+    <moqui.basic.LocalizedMessage original="This" locale="zh_CN" localized="当前"/>
+    <moqui.basic.LocalizedMessage original="Next" locale="zh_CN" localized="未来"/>
+    <moqui.basic.LocalizedMessage original="Last" locale="zh_CN" localized="过去"/>
+    <moqui.basic.LocalizedMessage original="Day" locale="zh_CN" localized="天"/>
+    <moqui.basic.LocalizedMessage original="Days" locale="zh_CN" localized="天"/>
+    <moqui.basic.LocalizedMessage original="Week" locale="zh_CN" localized="周"/>
+    <moqui.basic.LocalizedMessage original="Weeks" locale="zh_CN" localized="周"/>
 </entity-facade-xml>
