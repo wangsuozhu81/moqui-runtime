@@ -18,4 +18,11 @@ along with this software (see the LICENSE.md file). If not, see
 
     <moqui.basic.LocalizedMessage original="Tools" locale="en" localized="Tools"/>
     <moqui.basic.LocalizedMessage original="Tools" locale="zh_CN" localized="系统工具"/>
+
+
+
+
+
+
+
 </entity-facade-xml>

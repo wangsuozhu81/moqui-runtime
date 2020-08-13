@@ -21,21 +21,7 @@
 /classes/*.pem
 /lib/*.jar
 /ecomponent/
-/component/example
-/component/HiveMind
-/component/mantle-udm
-/component/mantle-usl
-/component/moqui-camel
-/component/moqui-fop
-/component/moqui-quasar
-/component/PopCommerce
-/component/SimpleScreens
-/component/PopRestStore
-/component/YyAgreement
-/component/YyConfiguration
-/component/YyUtils
-/component/YyWMS
-
+/component/*
 /mantle/
 
 # jackrabbit standalone jar file

@@ -17,17 +17,31 @@ along with this software (see the LICENSE.md file). If not, see
             localized="Page ${curPageIndex + 1} of ${curPageMaxIndex + 1} (${context[listName + 'PageRangeLow']} - ${context[listName + 'PageRangeHigh']} of ${context[listName + 'Count']})"/>
 
     <moqui.basic.LocalizedMessage original="Choose an Application" locale="en" localized="Y&amp;Y Insight Enterprise Application Platform "/>
-    <moqui.basic.LocalizedMessage original="Choose an Application" locale="zh_CN" localized="和英智远企业应用平台"/>
-    <moqui.basic.LocalizedMessage original="Applications" locale="zh_CN" localized="应用"/>
+    <moqui.basic.LocalizedMessage original="Choose an Application" locale="zh_CN" localized="企业应用平台"/>
+    <moqui.basic.LocalizedMessage original="Applications" locale="zh_CN" localized="企业应用平台"/>
     <moqui.basic.LocalizedMessage original="App List" locale="zh_CN" localized="应用列表"/>
     <moqui.basic.LocalizedMessage original="No results found" locale="zh_CN" localized="查无数据"/>
-    <moqui.basic.LocalizedMessage original="Find Options" locale="zh_CN" localized="查询选项"/>
+
     <moqui.basic.LocalizedMessage original="Columns" locale="zh_CN" localized="显示列"/>
     <moqui.basic.LocalizedMessage original="CSV" locale="zh_CN" localized="导出CSV"/>
     <moqui.basic.LocalizedMessage original="Text" locale="zh_CN" localized="导出Text"/>
     <moqui.basic.LocalizedMessage original="PDF" locale="zh_CN" localized="导出PDF"/>
+
+    <moqui.basic.LocalizedMessage original="Find Options" locale="zh_CN" localized="查询选项"/>
     <moqui.basic.LocalizedMessage original="Clear Parameters" locale="zh_CN" localized="清空"/>
     <moqui.basic.LocalizedMessage original="Order By" locale="zh_CN" localized="排序"/>
+    <moqui.basic.LocalizedMessage original="(Desc)" locale="zh_CN" localized="(降序)"/>
+    <moqui.basic.LocalizedMessage original="(Asc)" locale="zh_CN" localized="(升序)"/>
+    <moqui.basic.LocalizedMessage original="Offset" locale="zh_CN" localized="偏移量"/>
+    <moqui.basic.LocalizedMessage original="Period" locale="zh_CN" localized="偏移步长"/>
+    <moqui.basic.LocalizedMessage original="From" locale="zh_CN" localized="起始"/>
+    <moqui.basic.LocalizedMessage original="Thru" locale="zh_CN" localized="截止"/>
+
+    <moqui.basic.LocalizedMessage original="Date Range Mode" locale="zh_CN" localized="日期范围模式"/>
+    <moqui.basic.LocalizedMessage original="Period Select Mode" locale="zh_CN" localized="区间选择模式"/>
+
+    <moqui.basic.LocalizedMessage original="Show Viewed" locale="zh_CN" localized="显示已查看"/>
+
     <moqui.basic.LocalizedMessage original="Column Fields" locale="zh_CN" localized="列字段"/>
     <moqui.basic.LocalizedMessage original="Drag fields to the desired column or do not display" locale="zh_CN" localized="拖动列到相应位置以显示或隐藏"/>
     <moqui.basic.LocalizedMessage original="Do Not Display" locale="zh_CN" localized="隐藏"/>
