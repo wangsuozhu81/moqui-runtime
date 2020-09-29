@@ -12,6 +12,8 @@ along with this software (see the LICENSE.md file). If not, see
 <http://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 
+<#include "DefaultScreenMacros.any.ftl"/>
+
 <#macro @element><p>=== Doing nothing for element ${.node?node_name}, not yet implemented. ===</p></#macro>
 
 <#macro screen><#recurse></#macro>
@@ -190,35 +192,6 @@ ${sri.renderIncludeScreen(.node["@location"], .node["@share-scope"]!)}
 <#macro "tree-node"><#-- shouldn't be called directly, but just in case --></#macro>
 <#macro "tree-sub-node"><#-- shouldn't be called directly, but just in case --></#macro>
 
-<#-- ============== Render Mode Elements ============== -->
-<#macro "render-mode">
-<#if .node["text"]?has_content>
-    <#list .node["text"] as textNode><#if !textNode["@type"]?has_content || textNode["@type"] == "any"><#local textToUse = textNode/></#if></#list>
-    <#list .node["text"] as textNode><#if textNode["@type"]?has_content && textNode["@type"]?split(",")?seq_contains(sri.getRenderMode())><#local textToUse = textNode></#if></#list>
-    <#if textToUse??>
-        <#if textToUse["@location"]?has_content>
-          <#assign textLocation = ec.getResource().expandNoL10n(textToUse["@location"], "")>
-          <#if sri.doBoundaryComments() && textToUse["@no-boundary-comment"]! != "true"><!-- BEGIN render-mode.text[@location=${textLocation}][@template=${textToUse["@template"]!"true"}] --></#if>
-          <#-- NOTE: this still won't encode templates that are rendered to the writer -->
-          <#if .node["@encode"]! == "true">${sri.renderText(textLocation, textToUse["@template"]!)?html}<#else>${sri.renderText(textLocation, textToUse["@template"]!)}</#if>
-          <#if sri.doBoundaryComments() && textToUse["@no-boundary-comment"]! != "true"><!-- END   render-mode.text[@location=${textLocation}][@template=${textToUse["@template"]!"true"}] --></#if>
-        </#if>
-        <#assign inlineTemplateSource = textToUse.@@text!>
-        <#if inlineTemplateSource?has_content>
-          <#if sri.doBoundaryComments() && textToUse["@no-boundary-comment"]! != "true"><!-- BEGIN render-mode.text[inline][@template=${textToUse["@template"]!"true"}] --></#if>
-          <#if !textToUse["@template"]?has_content || textToUse["@template"] == "true">
-            <#assign inlineTemplate = [inlineTemplateSource, sri.getActiveScreenDef().location + ".render_mode.text"]?interpret>
-            <@inlineTemplate/>
-          <#else>
-            <#if .node["@encode"]! == "true">${inlineTemplateSource?html}<#else>${inlineTemplateSource}</#if>
-          </#if>
-          <#if sri.doBoundaryComments() && textToUse["@no-boundary-comment"]! != "true"><!-- END   render-mode.text[inline][@template=${textToUse["@template"]!"true"}] --></#if>
-        </#if>
-    </#if>
-</#if>
-</#macro>
-<#macro text><#-- do nothing, is used only through "render-mode" --></#macro>
-
 <#-- ================== Standalone Fields ==================== -->
 <#macro link>
     <#assign linkNode = .node>
@@ -359,6 +332,41 @@ ${sri.renderIncludeScreen(.node["@location"], .node["@share-scope"]!)}
     </#if>
 </#macro>
 <#macro parameter><#-- do nothing, used directly in other elements --></#macro>
+
+<#macro "button-menu">
+    <#if .node["@condition"]?has_content><#assign conditionResult = ec.getResource().condition(.node["@condition"], "")><#else><#assign conditionResult = true></#if>
+    <#if !conditionResult><#return></#if>
+
+    <#assign textMap = "">
+    <#if .node["@text-map"]?has_content><#assign textMap = ec.getResource().expression(.node["@text-map"], "")!></#if>
+    <#if textMap?has_content><#assign linkText = ec.getResource().expand(.node["@text"], "", textMap)>
+        <#else><#assign linkText = ec.getResource().expand(.node["@text"]!"", "")></#if>
+
+    <#if linkText == "null"><#assign linkText = ""></#if>
+    <#if linkText?has_content || .node["image"]?has_content || .node["@icon"]?has_content>
+        <#if .node["@encode"]! != "false"><#assign linkText = linkText?html></#if>
+        <#assign iconClass = .node["@icon"]!>
+        <#if !iconClass?has_content && linkText?has_content><#assign iconClass = sri.getThemeIconClass(linkText)!></#if>
+        <#assign badgeMessage = ec.getResource().expand(.node["@badge"]!, "")/>
+
+        <#-- TODO: tooltip, doesn't work when using data-toggle for dropdown! <#if .node["@tooltip"]?has_content>${ec.getResource().expand(.node["@tooltip"], "")}</#if> -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-${.node["@btn-type"]!"primary"} dropdown-toggle<#if .node["@style"]?has_content> ${ec.getResource().expandNoL10n(.node["@style"], "")}</#if>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <#if iconClass?has_content><i class="${iconClass}"></i></#if>
+                <#if .node["image"]?has_content><#visit .node["image"][0]><#else>${linkText}</#if>
+                <#if badgeMessage?has_content> <span class="badge">${badgeMessage}</span></#if>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" style="padding:8px;">
+            <#list .node?children as childNode>
+                <li>
+                    <#visit childNode>
+                </li>
+            </#list>
+            </ul>
+        </div>
+    </#if>
+</#macro>
 
 <#-- ============================================================= -->
 <#-- ======================= Form Single ========================= -->

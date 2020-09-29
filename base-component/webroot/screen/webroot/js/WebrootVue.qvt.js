@@ -140,6 +140,11 @@ moqui.loadComponent = function(urlInfo, callback, divId) {
         path = urlInfo.path; extraPath = urlInfo.extraPath; search = urlInfo.search;
         bodyParameters = urlInfo.bodyParameters; renderModes = urlInfo.renderModes;
     }
+    // if Quasar says it's mobile then tell the server via _uiType parameter
+    console.log("Load Component " + JSON.stringify(urlInfo) + " Window Width " + window.innerWidth + " Quasar Platform: " + JSON.stringify(Quasar.Platform.is) + " search: " + search);
+    if ((window.innerWidth <= 600 || Quasar.Platform.is.mobile) && (!search || search.indexOf("_uiType") < 0)) {
+        search = (search || '') + '&_uiType=mobile';
+    }
 
     /* NOTE DEJ 20200718: uncommented componentCache but leaving comment in place in case remains an issue (makes user experience much smoother):
      * CACHE DISABLED: issue with more recent Vue JS where cached components don't re-render when assigned so screens don't load
@@ -943,6 +948,8 @@ Vue.component('m-form-column-config', {
             fields.formLocation = this.formLocation;
             if (this.findParameters) for (var curKey in Object.keys(this.findParameters))
                 fields[curKey] = this.findParameters[curKey];
+            console.log("Save column config " + this.formLocation + " Window Width " + window.innerWidth + " Quasar Platform: " + JSON.stringify(Quasar.Platform.is));
+            if (window.innerWidth <= 600 || Quasar.Platform.is.mobile) fields._uiType = 'mobile';
         }
     }
 });
@@ -1180,7 +1187,11 @@ Vue.component('m-date-period', {
             this.fields[this.name+'_from'] = null; this.fields[this.name+'_thru'] = null;
         }
     },
-    beforeMount: function() { if (((this.fromDate && this.fromDate.length) || (this.thruDate && this.thruDate.length))) this.fromThruMode = true; }
+    mounted: function() {
+        var fromDate = this.fields[this.name+'_from'];
+        var thruDate = this.fields[this.name+'_thru'];
+        if (((fromDate && fromDate.length) || (thruDate && thruDate.length))) this.fromThruMode = true;
+    }
 });
 
 Vue.component('m-display', {
@@ -1839,7 +1850,7 @@ moqui.webrootVue = new Vue({
     el: '#apps-root',
     data: { basePath:"", linkBasePath:"", currentPathList:[], extraPathList:[], activeSubscreens:[], currentParameters:{}, bodyParameters:null,
         navMenuList:[], navHistoryList:[], navPlugins:[], notifyHistoryList:[], lastNavTime:Date.now(), loading:0, currentLoadRequest:null, activeContainers:{},
-        moquiSessionToken:"", appHost:"", appRootPath:"", userId:"", locale:"en", notificationClient:null, qzVue:null, leftOpen:false },
+        moquiSessionToken:"", appHost:"", appRootPath:"", userId:"", locale:"en", notificationClient:null, qzVue:null, leftOpen:false, moqui:moqui },
     methods: {
         setUrl: function(url, bodyParameters, onComplete) {
             // cancel current load if needed
