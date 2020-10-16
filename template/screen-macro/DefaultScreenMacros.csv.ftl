@@ -10,14 +10,13 @@ You should have received a copy of the CC0 Public Domain Dedication
 along with this software (see the LICENSE.md file). If not, see
 <http://creativecommons.org/publicdomain/zero/1.0/>.
 -->
-
+<#-- NOTE: no empty lines before the first #macro otherwise FTL outputs empty lines in CSV file -->
 <#include "DefaultScreenMacros.any.ftl"/>
-
 <#-- NOTE: to change how CSV escaping/etc works change or override this macro: -->
 <#macro csvValue textValue>
     <#-- this default escaping looks for commas or double-quotes and if found surrounds with quotes, always changes
     double-quotes within the string to 2 double-quotes -->
-    <#if textValue?contains(",") || textValue?contains("\"")><#assign useQuotes = true><#else><#assign useQuotes = false></#if>
+    <#if textValue?contains(",") || textValue?contains("\"") || textValue?contains("\n")><#assign useQuotes = true><#else><#assign useQuotes = false></#if>
     <#t><#if useQuotes>"</#if>${textValue?replace("\"", "\"\"")}<#if useQuotes>"</#if>
 </#macro>
 
