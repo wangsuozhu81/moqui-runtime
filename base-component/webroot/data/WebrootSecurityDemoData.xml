@@ -30,15 +30,15 @@ along with this software (see the LICENSE.md file). If not, see
 
     <!-- ========== Demo User ========== -->
     <!-- password=moqui -->
-    <moqui.security.UserAccount userId="EX_DEMO_USER" username="demo" userFullName="演示用户"
+    <moqui.security.UserAccount userId="DEMO_USER" username="demo" userFullName="演示用户"
                                 currentPassword="16ac58bbfa332c1c55bd98b53e60720bfa90d394" passwordHashType="SHA"
                                 passwordHint="framework name, lowercase" currencyUomId="CNY" locale="zh_CN" timeZone="Asia/Shanghai"
                                 emailAddress="demo@moqui.org"/>
-    <moqui.security.UserGroupMember userGroupId="ADMIN" userId="EX_DEMO_USER" fromDate="1265184000000"/>
+    <moqui.security.UserGroupMember userGroupId="DEMO_USER_GROUP" userId="DEMO_USER" fromDate="1265184000000"/>
     <moqui.security.UserPermission userPermissionId="ExamplePerm" description="Example Permission"/>
-    <moqui.security.UserGroupPermission userGroupId="ADMIN" userPermissionId="ExamplePerm"
+    <moqui.security.UserGroupPermission userGroupId="DEMO_USER_GROUP" userPermissionId="ExamplePerm"
                                         fromDate="1265184000000" thruDate=""/>
-    <moqui.security.UserLoginHistory userId="EX_DEMO_USER" fromDate="1265184000000" successfulLogin="Y"/>
+    <moqui.security.UserLoginHistory userId="DEMO_USER" fromDate="1265184000000" successfulLogin="Y"/>
 
     <!-- ========== Artifact Tarpit Example ========== -->
     <moqui.security.ArtifactGroup artifactGroupId="ALL_SCREENS" description="All Screens"/>

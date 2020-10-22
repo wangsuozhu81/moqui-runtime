@@ -13,11 +13,17 @@ along with this software (see the LICENSE.md file). If not, see
 <http://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <entity-facade-xml type="seed">
+    <!-- Demo user group -->
+    <moqui.security.UserGroup userGroupId="DEMO_USER_GROUP" description="Demo user group"/>
+
     <!-- Tools App artifacts/authz -->
     <artifactGroups artifactGroupId="TOOLS_APP" description="Tools App (via root screen)">
         <artifacts artifactName="component://tools/screen/Tools.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y"/>
         <!-- Full permissions for the ADMIN user group -->
         <authz artifactAuthzId="TOOLS_APP_ADMIN" userGroupId="ADMIN" authzTypeEnumId="AUTHZT_ALWAYS" authzActionEnumId="AUTHZA_ALL"/>
+        <!-- Full permissions for the demo user group -->
+        <authz artifactAuthzId="TOOLS_APP_DEMO" userGroupId="DEMO_USER_GROUP" authzTypeEnumId="AUTHZT_ALWAYS" authzActionEnumId="AUTHZA_ALL"/>
+
     </artifactGroups>
 
     <!-- System App artifacts/authz -->
@@ -25,6 +31,8 @@ along with this software (see the LICENSE.md file). If not, see
         <artifacts artifactName="component://tools/screen/System.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y"/>
         <!-- Full permissions for the ADMIN user group -->
         <authz artifactAuthzId="SYSTEM_APP_ADMIN" userGroupId="ADMIN" authzTypeEnumId="AUTHZT_ALWAYS" authzActionEnumId="AUTHZA_ALL"/>
+        <!-- Full permissions for the demo user group -->
+        <authz artifactAuthzId="SYSTEM_APP_DEMO" userGroupId="DEMO_USER_GROUP" authzTypeEnumId="AUTHZT_ALWAYS" authzActionEnumId="AUTHZA_ALL"/>
     </artifactGroups>
 
     <!-- Artifact group for all of the Moqui Tools REST API via the moqui resource (the root resource) -->
@@ -32,5 +40,7 @@ along with this software (see the LICENSE.md file). If not, see
         <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" artifactName="/moqui"/>
         <!-- Full permissions for the ADMIN user group -->
         <authz artifactAuthzId="MOQUI_API_ADMIN" userGroupId="ADMIN" authzTypeEnumId="AUTHZT_ALWAYS" authzActionEnumId="AUTHZA_ALL"/>
+        <!-- Full permissions for the demo user group -->
+        <authz artifactAuthzId="MOQUI_API_DEMO" userGroupId="DEMO_USER_GROUP" authzTypeEnumId="AUTHZT_ALWAYS" authzActionEnumId="AUTHZA_ALL"/>
     </artifactGroups>
 </entity-facade-xml>
