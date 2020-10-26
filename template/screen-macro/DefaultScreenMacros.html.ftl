@@ -590,7 +590,7 @@ ${sri.renderIncludeScreen(.node["@location"], .node["@share-scope"]!)}
         <#if lastUpdatedString?has_content><input type="hidden" name="lastUpdatedStamp" value="${lastUpdatedString}"></#if>
     </#if>
     <#if formNode["@pass-through-parameters"]! == "true">
-        <#assign currentFindUrl = sri.getScreenUrlInstance().cloneUrlInstance().removeParameter("pageIndex").removeParameter("moquiFormName").removeParameter("moquiSessionToken").removeParameter("lastStandalone").removeParameter("formListFindId")>
+        <#assign currentFindUrl = sri.getScreenUrlInstance().cloneUrlInstance().removeParameter("moquiFormName").removeParameter("moquiSessionToken").removeParameter("lastStandalone").removeParameter("formListFindId")>
         <#assign currentFindUrlParms = currentFindUrl.getParameterMap()>
         <#list currentFindUrlParms.keySet() as parmName><#if !formInstance.getFieldNode(parmName)??>
             <input type="hidden" name="${parmName}" value="${currentFindUrlParms.get(parmName)!?html}">
@@ -2139,7 +2139,7 @@ a => A, d => D, y => Y
     </#if>
 </#macro>
 
-<#macro file><input type="file" class="form-control" name="<@fieldName .node/>" value="${sri.getFieldValueString(.node)?html}" size="${.node.@size!"30"}"<#if .node.@maxlength?has_content> maxlength="${.node.@maxlength}"</#if><#if .node?parent["@tooltip"]?has_content> data-toggle="tooltip" title="${ec.getResource().expand(.node?parent["@tooltip"], "")}"</#if><#if ownerForm?has_content> form="${ownerForm}"</#if>></#macro>
+<#macro file><input type="file" class="form-control" name="<@fieldName .node/>"<#if .node.@multiple! == "true"> multiple</#if><#if .node.@accept?has_content> accept="${.node.@accept}"</#if> value="${sri.getFieldValueString(.node)?html}" size="${.node.@size!"30"}"<#if .node.@maxlength?has_content> maxlength="${.node.@maxlength}"</#if><#if .node?parent["@tooltip"]?has_content> data-toggle="tooltip" title="${ec.getResource().expand(.node?parent["@tooltip"], "")}"</#if><#if ownerForm?has_content> form="${ownerForm}"</#if>></#macro>
 
 <#macro hidden>
     <#-- use getFieldValuePlainString() and not getFieldValueString() so we don't do timezone conversions, etc -->
