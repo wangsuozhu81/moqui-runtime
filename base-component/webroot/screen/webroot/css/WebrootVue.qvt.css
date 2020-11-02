@@ -6,6 +6,7 @@ a { color:var(--q-color-primary); text-decoration:none; }
 .text-success { color:var(--q-color-positive); }
 .text-danger { color:var(--q-color-negative); }
 .text-mono { font-family: monospace,monospace; }
+strong, .text-strong { font-weight:bold; }
 
 form, fieldset { border:none; display:contents; }
 
@@ -66,7 +67,7 @@ form.q-form { width:100%; }
 /* make notch fit text, not full width */
 .q-field--dense.q-field--float .q-field__label { right:auto; }
 /* move input text up 6px OOTB padding-top:14px */
-.q-field--labeled.q-field--dense .q-field__native { padding-top:8px; }
+.q-field--labeled.q-field--dense .q-field__native, .q-field--labeled.q-field--dense .q-field__prefix { padding-top:8px; }
 /* move drop-down input up 6px; this padding-top defaults to 14px, have to move up 12px to handle wrapped field padding */
 .q-field--auto-height.q-field--dense.q-field--labeled .q-field__control-container { padding-top:0; }
 /* fix blue focus border on top of label instead of behind */
@@ -96,6 +97,7 @@ form.q-form { width:100%; }
 
 .q-table--dense .q-table .form-list-nav-row th:first-child { padding:4px 0; }
 .form-list-nav-row .q-bar { background-color:transparent; }
+.form-list-nav-row, .form-list-nav-row .q-btn { font-size:13px; }
 
 .form-date-find { display:inline-flex; }
 

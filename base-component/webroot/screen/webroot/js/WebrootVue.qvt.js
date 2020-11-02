@@ -410,11 +410,12 @@ Vue.component('m-dialog', {
 });
 Vue.component('m-container-dialog', {
     name: "mContainerDialog",
-    props: { id:String, color:String, buttonText:String, buttonClass:String, title:String, width:{type:String}, openDialog:{type:Boolean,'default':false} },
+    props: { id:String, color:String, buttonText:String, buttonClass:String, title:String, width:{type:String},
+        openDialog:{type:Boolean,'default':false}, buttonIcon:{type:String,'default':'open_in_new'} },
     data: function() { return { isShown:false }},
     template:
     '<span>' +
-        '<span @click="show()"><slot name="button"><q-btn dense outline no-caps icon="open_in_new" :label="buttonText" :color="color" :class="buttonClass"></q-btn></slot></span>' +
+        '<span @click="show()"><slot name="button"><q-btn dense outline no-caps :icon="buttonIcon" :label="buttonText" :color="color" :class="buttonClass"></q-btn></slot></span>' +
         '<m-dialog v-model="isShown" :id="id" :title="title" :color="color" :width="width"><slot></slot></m-dialog>' +
     '</span>',
     methods: { show: function() { this.isShown = true; }, hide: function() { this.isShown = false; } },
@@ -1558,11 +1559,11 @@ Vue.component('m-drop-down', {
 Vue.component('m-text-line', {
     name: "mTextLine",
     props: { value:String, type:{type:String,'default':'text'}, id:String, name:String, size:String, fields:{type:Object},
-        label:String, tooltip:String, disable:Boolean, mask:String, fillMask:String, rules:Array,
+        label:String, tooltip:String, prefix:String, disable:Boolean, mask:String, fillMask:String, rules:Array,
         defaultUrl:String, defaultParameters:Object, dependsOn:Object, dependsOptional:Boolean, defaultLoadInit:Boolean },
     data: function() { return { loading:false } },
     template:
-        '<q-input dense outlined stack-label :label="label" v-bind:value="value" v-on:input="$emit(\'input\', $event)" :type="type"' +
+        '<q-input dense outlined stack-label :label="label" :prefix="prefix" v-bind:value="value" v-on:input="$emit(\'input\', $event)" :type="type"' +
                 ' :id="id" :name="name" :size="size" :loading="loading" lazy-rules :rules="rules" :disable="disable" :mask="mask" :fill-mask="fillMask">' +
             '<q-tooltip v-if="tooltip">{{tooltip}}</q-tooltip>' +
         '</q-input>',
