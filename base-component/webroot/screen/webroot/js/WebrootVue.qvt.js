@@ -2,6 +2,7 @@
 
 // some globals for all Vue components to directly use the moqui object (for methods, constants, etc) and the window object
 Vue.prototype.moqui = moqui;
+Vue.prototype.moment = moment;
 Vue.prototype.window = window;
 
 moqui.urlExtensions = { js:'qjs', vue:'qvue', vuet:'qvt' }
@@ -560,7 +561,9 @@ Vue.component('m-form', {
     data: function() { return { fields:Object.assign({}, this.fieldsInitial), fieldsChanged:{}, buttonClicked:null }},
     // NOTE: <slot v-bind:fields="fields"> also requires prefix from caller, using <m-form v-slot:default="formProps"> in qvt.ftl macro
     // see https://vuejs.org/v2/guide/components-slots.html
-    template: '<q-form ref="qForm" @submit.prevent="submitForm" @reset.prevent="resetForm"><slot v-bind:fields="fields"></slot></q-form>',
+    template:
+        '<q-form ref="qForm" @submit.prevent="submitForm" @reset.prevent="resetForm" autocapitalize="off" autocomplete="off">' +
+            '<slot v-bind:fields="fields"></slot></q-form>',
     methods: {
         submitForm: function() {
             if (this.noValidate) {
@@ -572,6 +575,7 @@ Vue.component('m-form', {
                     if (success) {
                         vm.submitGo();
                     } else {
+                        /*
                         // For convenience, attempt to focus the first invalid element.
                         // Begin by finding the first invalid input
                         var invEle = jqEl.find('div.has-error input, div.has-error select, div.has-error textarea').first();
@@ -595,6 +599,7 @@ Vue.component('m-form', {
                                 } else invEle.focus();
                             } else invEle.focus();
                         }
+                        */
                     }
                 })
             }
@@ -720,7 +725,9 @@ Vue.component('m-form-link', {
     name: "mFormLink",
     props: { fieldsInitial:Object, action:{type:String,required:true}, focusField:String, noValidate:Boolean, bodyParameterNames:Array },
     data: function() { return { fields:Object.assign({}, this.fieldsInitial) }},
-    template: '<q-form ref="qForm" @submit.prevent="submitForm" @reset.prevent="resetForm"><slot :clearForm="clearForm" :fields="fields"></slot></q-form>',
+    template:
+        '<q-form ref="qForm" @submit.prevent="submitForm" @reset.prevent="resetForm" autocapitalize="off" autocomplete="off">' +
+            '<slot :clearForm="clearForm" :fields="fields"></slot></q-form>',
     methods: {
         submitForm: function() {
             if (this.noValidate) {
@@ -1050,12 +1057,12 @@ Vue.component('m-form-list', {
 Vue.component('m-date-time', {
     name: "mDateTime",
     props: { id:String, name:{type:String,required:true}, value:String, type:{type:String,'default':'date-time'}, label:String,
-        size:String, format:String, tooltip:String, form:String, required:String, disable:Boolean, autoYear:String,
+        size:String, format:String, tooltip:String, form:String, required:String, rules:Array, disable:Boolean, autoYear:String,
         minuteStep:{type:Number,'default':5} },
     template:
     // NOTE: tried :fill-mask="formatVal" but results in all Y, only supports single character for mask placeholder... how to show more helpful date mask?
     // TODO: add back @focus="focusDate" @blur="blurDate" IFF needed given different mask/etc behavior
-    '<q-input dense outlined stack-label :label="label" v-bind:value="value" v-on:input="$emit(\'input\', $event)"' +
+    '<q-input dense outlined stack-label :label="label" v-bind:value="value" v-on:input="$emit(\'input\', $event)" :rules="rules"' +
             ' :mask="inputMask" fill-mask :id="id" :name="name" :form="form" :disable="disable" :size="sizeVal" style="max-width:max-content;">' +
         '<template v-slot:prepend v-if="type==\'date\' || type==\'date-time\' || !type">' +
             '<q-icon name="event" class="cursor-pointer">' +
@@ -1312,6 +1319,7 @@ Vue.component('m-drop-down', {
                 ' dense outlined options-dense use-input :fill-input="!multiple" hide-selected :name="name" :id="id" :form="form"' +
                 ' input-debounce="500" @filter="filterFn" :clearable="allowEmpty||multiple" :disable="disable"' +
                 ' :multiple="multiple" :emit-value="!onSelectGoTo" map-options behavior="menu"' +
+                ' :rules="[val => allowEmpty||multiple||(val && val.length)||\'Please select an option\']"' +
                 ' stack-label :label="label" :loading="loading" :options="curOptions">' +
             '<q-tooltip v-if="tooltip">{{tooltip}}</q-tooltip>' +
             '<template v-slot:no-option><q-item><q-item-section class="text-grey">No results</q-item-section></q-item></template>' +
@@ -1542,7 +1550,7 @@ Vue.component('m-drop-down', {
             }
         }
         // simulate normal select behavior with no empty option (not allowEmpty) where first value is selected by default
-        if (!this.multiple && !this.allowEmpty && (!this.value || !this.value.length) && this.options && this.options.length) {
+        if (!this.multiple && !this.allowEmpty && (!this.value || !this.value.length) && this.options && this.options.length === 1) {
             this.$emit('input', this.options[0].value);
         }
     },
@@ -1564,7 +1572,8 @@ Vue.component('m-text-line', {
     data: function() { return { loading:false } },
     template:
         '<q-input dense outlined stack-label :label="label" :prefix="prefix" v-bind:value="value" v-on:input="$emit(\'input\', $event)" :type="type"' +
-                ' :id="id" :name="name" :size="size" :loading="loading" lazy-rules :rules="rules" :disable="disable" :mask="mask" :fill-mask="fillMask">' +
+                ' :id="id" :name="name" :size="size" :loading="loading" :rules="rules" :disable="disable" :mask="mask" :fill-mask="fillMask"' +
+                ' autocapitalize="off" autocomplete="off">' +
             '<q-tooltip v-if="tooltip">{{tooltip}}</q-tooltip>' +
         '</q-input>',
     methods: {
@@ -2009,6 +2018,7 @@ moqui.webrootVue = new Vue({
             }
         },
         getLinkPath: function(path) {
+            if (moqui.isPlainObject(path)) path = moqui.makeHref(path);
             if (this.appRootPath && this.appRootPath.length && path.indexOf(this.appRootPath) !== 0) path = this.appRootPath + path;
             var pathList = path.split('/');
             // element 0 in array after split is empty string from leading '/'
