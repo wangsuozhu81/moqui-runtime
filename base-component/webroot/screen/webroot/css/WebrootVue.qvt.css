@@ -61,6 +61,8 @@ form.q-form { width:100%; }
 /* BEGIN q-field label move up to overlay outline */
 /* need small (6px) top margin so floating label does not overlap elements above, but to make all q-field consistent apply too all (not just .q-field--labeled.q-field--dense) */
 .q-field--dense { margin:6px 0 6px 0; }
+/* don't double margin for q-field within q-field */
+.q-field--dense .q-field--dense, .row .q-field--dense { margin:0; }
 /* move field lable up to 'notch' in outline (like https://material.io/components/text-fields) */
 .q-field--dense .q-field__label { top:0; padding-left:4px; padding-right:4px; background-color:white; }
 .body--dark .q-field--dense .q-field__label { background-color:black; }
@@ -75,6 +77,8 @@ form.q-form { width:100%; }
 /* fix disabled opacity, was 0.6 which caused border to bleed through */
 .q-field--disabled .q-field__control > div { opacity:1 !important; }
 /* END q-field label move */
+
+.q-field--focused .q-field__input { border-bottom: var(--q-color-primary) solid 1px; margin-left:8px; }
 
 .q-field--dense .q-field__marginal { height:auto; min-height:40px; }
 .q-field__prepend { max-width:75%; }
@@ -109,6 +113,7 @@ form.q-form { width:100%; }
 .tbody { display: table-row-group; }
 .tr { display: table-row; }
 .td, .th { display: table-cell; vertical-align: middle; }
+td div, .td div { min-height:21px; }
 
 /* ====== quasar table styles adapted to div based table styles ====== */
 /* NOTE: these are based on quasar.css version 1.12.11 */
