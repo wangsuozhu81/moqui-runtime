@@ -13,16 +13,222 @@ along with this software (see the LICENSE.md file). If not, see
 <http://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <entity-facade-xml type="seed">
-    <moqui.basic.LocalizedMessage original="System" locale="en" localized="System"/>
     <moqui.basic.LocalizedMessage original="System" locale="zh_CN" localized="系统管理"/>
 
-    <moqui.basic.LocalizedMessage original="Tools" locale="en" localized="Tools"/>
+    <moqui.basic.LocalizedMessage original="Server Admin" locale="zh_CN" localized="服务器管理"/>
+    <moqui.basic.LocalizedMessage original="Cache Mgmt" locale="zh_CN" localized="缓存管理"/>
+    <moqui.basic.LocalizedMessage original="Instance Mgmt" locale="zh_CN" localized="实例管理"/>
+    <moqui.basic.LocalizedMessage original="Printers" locale="zh_CN" localized="打印机"/>
+    <moqui.basic.LocalizedMessage original="Print Jobs" locale="zh_CN" localized="打印作业"/>
+    <moqui.basic.LocalizedMessage original="Jobs Runs" locale="zh_CN" localized="作业运行"/>
+
+    <moqui.basic.LocalizedMessage original="Users" locale="zh_CN" localized="用户"/>
+    <moqui.basic.LocalizedMessage original="User Groups" locale="zh_CN" localized="用户组"/>
+    <moqui.basic.LocalizedMessage original="Artifact Groups" locale="zh_CN" localized="工件组"/>
+    <moqui.basic.LocalizedMessage original="Active Users" locale="zh_CN" localized="活动用户"/>
+
+    <moqui.basic.LocalizedMessage original="Usage" locale="zh_CN" localized="使用情况"/>
+    <moqui.basic.LocalizedMessage original="Artifact Hit Summary" locale="zh_CN" localized="工件点击情况概要"/>
+    <moqui.basic.LocalizedMessage original="Artifact Hit Bins" locale="zh_CN" localized="工件点击区间情况"/>
+    <moqui.basic.LocalizedMessage original="Data Documents and Feeds" locale="zh_CN" localized="数据文档与反馈"/>
+    <moqui.basic.LocalizedMessage original="Export" locale="zh_CN" localized="导出"/>
+    <moqui.basic.LocalizedMessage original="Feed Index" locale="zh_CN" localized="反馈索引"/>
+    <moqui.basic.LocalizedMessage original="Edit and Report Builder" locale="zh_CN" localized="编辑与报表设计器"/>
+
+    <moqui.basic.LocalizedMessage original="Data Admin" locale="zh_CN" localized="数据管理"/>
+    <moqui.basic.LocalizedMessage original="L10n: Messages" locale="zh_CN" localized="本地化消息"/>
+    <moqui.basic.LocalizedMessage original="L10n: Entity Fields" locale="zh_CN" localized="本地化实体字段"/>
+
+    <moqui.basic.LocalizedMessage original="Integration Admin" locale="zh_CN" localized="集成管理"/>
+    <moqui.basic.LocalizedMessage original="System Messages" locale="zh_CN" localized="系统消息"/>
+    <moqui.basic.LocalizedMessage original="Message Remotes" locale="zh_CN" localized="消息对端"/>
+    <moqui.basic.LocalizedMessage original="Message Types" locale="zh_CN" localized="消息类型"/>
+    <moqui.basic.LocalizedMessage original="Entity Data Sync" locale="zh_CN" localized="实体数据同步"/>
+
+    <moqui.basic.LocalizedMessage original="System Information" locale="zh_CN" localized="系统信息"/>
+    <moqui.basic.LocalizedMessage original="Re-Init Elastic" locale="zh_CN" localized="重新初始化ElasticSearch"/>
+
+    <moqui.basic.LocalizedMessage original="Find Options required to view results" locale="zh_CN" localized="需要设置查询选项以查看数据"/>
+
+    <moqui.basic.LocalizedMessage original="Artifact Summary" locale="zh_CN" localized="工件概要"/>
+    <moqui.basic.LocalizedMessage original="Get as XML" locale="zh_CN" localized="获取XML"/>
+    <moqui.basic.LocalizedMessage original="Artifact Type" locale="zh_CN" localized="工件类型"/>
+    <moqui.basic.LocalizedMessage original="Artifact Sub Type" locale="zh_CN" localized="工件子类型"/>
+    <moqui.basic.LocalizedMessage original="Artifact Name" locale="zh_CN" localized="工件名称"/>
+    <moqui.basic.LocalizedMessage original="Last Hit" locale="zh_CN" localized="上次点击"/>
+    <moqui.basic.LocalizedMessage original="Hits" locale="zh_CN" localized="点击次数"/>
+
+    <moqui.basic.LocalizedMessage original="Artifact Bins" locale="zh_CN" localized="工件区间情况"/>
+    <moqui.basic.LocalizedMessage original="Get as CSV" locale="zh_CN" localized="获取CSV"/>
+    <moqui.basic.LocalizedMessage original="Get as PDF" locale="zh_CN" localized="获取PDF"/>
+
+    <moqui.basic.LocalizedMessage original="Audit Log" locale="zh_CN" localized="审计日志"/>
+
+    <moqui.basic.LocalizedMessage original="Cache" locale="zh_CN" localized="缓存"/>
+
+    <moqui.basic.LocalizedMessage original="Data Document" locale="zh_CN" localized="数据文档"/>
+
+    <moqui.basic.LocalizedMessage original="Entity Sync" locale="zh_CN" localized="实体同步"/>
+
+    <moqui.basic.LocalizedMessage original="Localization" locale="zh_CN" localized="本地化"/>
+
+    <moqui.basic.LocalizedMessage original="Print" locale="zh_CN" localized="打印"/>
+
+    <moqui.basic.LocalizedMessage original="Resource Finder" locale="zh_CN" localized="资源查找"/>
+
+    <moqui.basic.LocalizedMessage original="Security" locale="zh_CN" localized="安全"/>
+
+    <moqui.basic.LocalizedMessage original="Service Jobs" locale="zh_CN" localized="服务作业"/>
+
+    <moqui.basic.LocalizedMessage original="Sys-Sys Messages" locale="zh_CN" localized="系统内消息"/>
+    <moqui.basic.LocalizedMessage original="Remotes" locale="zh_CN" localized="对端"/>
+    <moqui.basic.LocalizedMessage original="Message Remote List" locale="zh_CN" localized="消息对端列表"/>
+    <moqui.basic.LocalizedMessage original="Types" locale="zh_CN" localized="类型"/>
+    <moqui.basic.LocalizedMessage original="Message Type List" locale="zh_CN" localized="消息类型列表"/>
+    <moqui.basic.LocalizedMessage original="System Message List" locale="zh_CN" localized="系统消息列表"/>
+
+    <moqui.basic.LocalizedMessage original="Visits" locale="zh_CN" localized="访问"/>
+    <moqui.basic.LocalizedMessage original="Visits" locale="zh_CN" localized="访问列表"/>
+
+    <moqui.basic.LocalizedMessage original="Instances" locale="zh_CN" localized="实例"/>
+    <moqui.basic.LocalizedMessage original="Application Instances" locale="zh_CN" localized="应用实例"/>
+    <moqui.basic.LocalizedMessage original="Create App Instance" locale="zh_CN" localized="创建应用实例"/>
+
+    <moqui.basic.LocalizedMessage original="Log Viewer" locale="zh_CN" localized="日志查看器"/>
+    <moqui.basic.LocalizedMessage original="Query String Reference" locale="zh_CN" localized="查询字符串引用"/>
+    <moqui.basic.LocalizedMessage original="Search" locale="zh_CN" localized="查找"/>
+
+    <moqui.basic.LocalizedMessage original="Hazelcast Info" locale="zh_CN" localized="Hazelcast信息"/>
+    <moqui.basic.LocalizedMessage original="Cluster" locale="zh_CN" localized="簇"/>
+    <moqui.basic.LocalizedMessage original="State" locale="zh_CN" localized="状态"/>
+    <moqui.basic.LocalizedMessage original="Version" locale="zh_CN" localized="版本"/>
+    <moqui.basic.LocalizedMessage original="Members" locale="zh_CN" localized="成员"/>
+    <moqui.basic.LocalizedMessage original="Entity Cache DCI" locale="zh_CN" localized="实体缓存DCI"/>
+    <moqui.basic.LocalizedMessage original="Published" locale="zh_CN" localized="已发布"/>
+    <moqui.basic.LocalizedMessage original="Last Publish" locale="zh_CN" localized="最近发布"/>
+    <moqui.basic.LocalizedMessage original="Received" locale="zh_CN" localized="已接收"/>
+    <moqui.basic.LocalizedMessage original="Last Receive" locale="zh_CN" localized="最近接收"/>
+
+    <moqui.basic.LocalizedMessage original="Thread List" locale="zh_CN" localized="线程列表"/>
+    <moqui.basic.LocalizedMessage original="Threads" locale="zh_CN" localized="当前线程数"/>
+    <moqui.basic.LocalizedMessage original="Peak" locale="zh_CN" localized="峰值"/>
+    <moqui.basic.LocalizedMessage original="Worker Pool Threads" locale="zh_CN" localized="工作线程池"/>
+    <moqui.basic.LocalizedMessage original="Active" locale="zh_CN" localized="活动线程数量"/>
+    <moqui.basic.LocalizedMessage original="Cur" locale="zh_CN" localized="当前容量"/>
+    <moqui.basic.LocalizedMessage original="Max" locale="zh_CN" localized="最大容量"/>
+    <moqui.basic.LocalizedMessage original="Queue" locale="zh_CN" localized="队列"/>
+    <moqui.basic.LocalizedMessage original="Rem" locale="zh_CN" localized="剩余容量"/>
+    <moqui.basic.LocalizedMessage original="Set Pool Size" locale="zh_CN" localized="设置缓冲池容量"/>
+    <moqui.basic.LocalizedMessage original="Scheduled Executor" locale="zh_CN" localized="调度任务"/>
+    <moqui.basic.LocalizedMessage original="Queue (scheduled runnables)" locale="zh_CN" localized="队列（已调度运行任务）"/>
+    <moqui.basic.LocalizedMessage original="Scheduled Queue" locale="zh_CN" localized="调度队列"/>
+    <moqui.basic.LocalizedMessage original="Initial Runnables" locale="zh_CN" localized="初始化运行任务"/>
+    <moqui.basic.LocalizedMessage original="Last job runner execute" locale="zh_CN" localized="最近任务运行器执行时间"/>
+    <moqui.basic.LocalizedMessage original="Runner executes" locale="zh_CN" localized="运行器执行次数"/>
+    <moqui.basic.LocalizedMessage original="Jobs run" locale="zh_CN" localized="运行任务数"/>
+    <moqui.basic.LocalizedMessage original="Last active" locale="zh_CN" localized="最近活动数量"/>
+    <moqui.basic.LocalizedMessage original="Last paused" locale="zh_CN" localized="最近暂停数量"/>
+
+    <moqui.basic.LocalizedMessage original="Stack" locale="zh_CN" localized="堆栈"/>
+    <moqui.basic.LocalizedMessage original="Interrupt" locale="zh_CN" localized="中断"/>
+
     <moqui.basic.LocalizedMessage original="Tools" locale="zh_CN" localized="系统工具"/>
 
+    <moqui.basic.LocalizedMessage original="Auto Screen" locale="zh_CN" localized="自动屏幕"/>
+    <moqui.basic.LocalizedMessage original="Auto Screen Entity List" locale="zh_CN" localized="自动屏幕实体列表"/>
+    <moqui.basic.LocalizedMessage original="Package" locale="zh_CN" localized="系统工具"/>
+    <moqui.basic.LocalizedMessage original="Master Entity" locale="zh_CN" localized="主实体"/>
 
+    <moqui.basic.LocalizedMessage original="Artifact Stats" locale="zh_CN" localized="工件统计"/>
+    <moqui.basic.LocalizedMessage original="Entity Stats" locale="zh_CN" localized="实体统计"/>
+    <moqui.basic.LocalizedMessage original="Entities" locale="zh_CN" localized="实体"/>
+    <moqui.basic.LocalizedMessage original="View Entities" locale="zh_CN" localized="视图实体"/>
+    <moqui.basic.LocalizedMessage original="EECA rules" locale="zh_CN" localized="实体事件响应动作规则"/>
 
+    <moqui.basic.LocalizedMessage original="Data View" locale="zh_CN" localized="数据查看"/>
+    <moqui.basic.LocalizedMessage original="Data View Entity List" locale="zh_CN" localized="视图实体列表"/>
+    <moqui.basic.LocalizedMessage original="View Entity Name" locale="zh_CN" localized="视图实体名称"/>
+    <moqui.basic.LocalizedMessage original="Entity" locale="zh_CN" localized="实体"/>
+    <moqui.basic.LocalizedMessage original="Edit" locale="zh_CN" localized="编辑"/>
+    <moqui.basic.LocalizedMessage original="View" locale="zh_CN" localized="查看"/>
 
+    <moqui.basic.LocalizedMessage original="Entity" locale="zh_CN" localized="实体"/>
+    <moqui.basic.LocalizedMessage original="Entity List" locale="zh_CN" localized="实体列表"/>
+    <moqui.basic.LocalizedMessage original="Check/Update All Tables" locale="zh_CN" localized="检查/更新全部表"/>
+    <moqui.basic.LocalizedMessage original="Drop FKs" locale="zh_CN" localized="删除外键"/>
+    <moqui.basic.LocalizedMessage original="Create FKs" locale="zh_CN" localized="创建外键"/>
+    <moqui.basic.LocalizedMessage original="Liquibase Init XML" locale="zh_CN" localized="生成Liquibase初始化XML文件"/>
+    <moqui.basic.LocalizedMessage original="Filter Regexp" locale="zh_CN" localized="过滤器表达式"/>
+    <moqui.basic.LocalizedMessage original="View Option" locale="zh_CN" localized="查看选项"/>
+    <moqui.basic.LocalizedMessage original="Filter" locale="zh_CN" localized="过滤"/>
+    <moqui.basic.LocalizedMessage original="Page#" locale="zh_CN" localized="页码"/>
+    <moqui.basic.LocalizedMessage original="Go" locale="zh_CN" localized="跳转"/>
+    <moqui.basic.LocalizedMessage original="Entity Name" locale="zh_CN" localized="实体名称"/>
+    <moqui.basic.LocalizedMessage original="View" locale="zh_CN" localized="视图"/>
+    <moqui.basic.LocalizedMessage original="Detail" locale="zh_CN" localized="查看更多"/>
 
+    <moqui.basic.LocalizedMessage original="Import" locale="zh_CN" localized="导入"/>
+    <moqui.basic.LocalizedMessage original="Timeout Seconds" locale="zh_CN" localized="超时秒数"/>
+    <moqui.basic.LocalizedMessage original="Entity" locale="zh_CN" localized="实体"/>
+    <moqui.basic.LocalizedMessage original="Dummy FKs?" locale="zh_CN" localized="仿制外键"/>
+    <moqui.basic.LocalizedMessage original="Use Try Insert?" locale="zh_CN" localized="使用尝试插入"/>
+    <moqui.basic.LocalizedMessage original="By Data Types" locale="zh_CN" localized="按数据类型"/>
+    <moqui.basic.LocalizedMessage original="Components" locale="zh_CN" localized="组件"/>
+    <moqui.basic.LocalizedMessage original="Resource Location" locale="zh_CN" localized="资源位置"/>
+    <moqui.basic.LocalizedMessage original="Location" locale="zh_CN" localized="位置"/>
+    <moqui.basic.LocalizedMessage original="XML Text" locale="zh_CN" localized="XML文本"/>
+    <moqui.basic.LocalizedMessage original="Text" locale="zh_CN" localized="文本"/>
+    <moqui.basic.LocalizedMessage original="JSON Text" locale="zh_CN" localized="JSON文本"/>
+    <moqui.basic.LocalizedMessage original="CSV Text" locale="zh_CN" localized="CSV文本"/>
+    <moqui.basic.LocalizedMessage original="Check Data" locale="zh_CN" localized="检查数据"/>
+    <moqui.basic.LocalizedMessage original="Import Data - Create Only" locale="zh_CN" localized="导入数据-仅创建"/>
+    <moqui.basic.LocalizedMessage original="Import Data - Create or Update" locale="zh_CN" localized="导入数据-创建或更新"/>
 
+    <moqui.basic.LocalizedMessage original="Query Stats" locale="zh_CN" localized="查询统计"/>
+    <moqui.basic.LocalizedMessage original="Clear Stats" locale="zh_CN" localized="清空统计"/>
+    <moqui.basic.LocalizedMessage original="Entity Filter" locale="zh_CN" localized="实体过滤器"/>
+    <moqui.basic.LocalizedMessage original="SQL Filter" locale="zh_CN" localized="SQL过滤器"/>
+    <moqui.basic.LocalizedMessage original="Statistics for queries run since server start. All times are in microseconds." locale="zh_CN" localized="对查询的统计在服务器启动时开始运行。所有时间都以微秒为单位。"/>
+
+    <moqui.basic.LocalizedMessage original="Snapshot" locale="zh_CN" localized="快照"/>
+    <moqui.basic.LocalizedMessage original="Export Snapshot" locale="zh_CN" localized="导出快照"/>
+    <moqui.basic.LocalizedMessage original="Upload Snapshot" locale="zh_CN" localized="上传快照"/>
+    <moqui.basic.LocalizedMessage original="Current Snapshot Files" locale="zh_CN" localized="当前快照文件"/>
+
+    <moqui.basic.LocalizedMessage original="Speed Test" locale="zh_CN" localized="速度测试"/>
+    <moqui.basic.LocalizedMessage original="Base Calls" locale="zh_CN" localized="基本调用次数"/>
+    <moqui.basic.LocalizedMessage original="Run" locale="zh_CN" localized="运行"/>
+    <moqui.basic.LocalizedMessage original="Operation" locale="zh_CN" localized="操作"/>
+    <moqui.basic.LocalizedMessage original="Entity" locale="zh_CN" localized="实体"/>
+    <moqui.basic.LocalizedMessage original="Calls" locale="zh_CN" localized="调用"/>
+    <moqui.basic.LocalizedMessage original="Milliseconds" locale="zh_CN" localized="毫秒"/>
+    <moqui.basic.LocalizedMessage original="Ms Per Call" locale="zh_CN" localized="每次调用时间（毫秒）"/>
+    <moqui.basic.LocalizedMessage original="Calls Per Second" locale="zh_CN" localized="每秒调用次数"/>
+
+    <moqui.basic.LocalizedMessage original="Group Name" locale="zh_CN" localized="数据组名称"/>
+    <moqui.basic.LocalizedMessage original="SQL Statement" locale="zh_CN" localized="SQL语句"/>
+    <moqui.basic.LocalizedMessage original="Milliseconds" locale="zh_CN" localized="毫秒"/>
+    <moqui.basic.LocalizedMessage original="Limit" locale="zh_CN" localized="结果数量上限"/>
+    <moqui.basic.LocalizedMessage original="Run SQL" locale="zh_CN" localized="运行SQL"/>
+    <moqui.basic.LocalizedMessage original="Query Results" locale="zh_CN" localized="查询结果"/>
+
+    <moqui.basic.LocalizedMessage original="Entity Names" locale="zh_CN" localized="实体名称"/>
+    <moqui.basic.LocalizedMessage original="Dependent Levels" locale="zh_CN" localized="依赖层级数量"/>
+    <moqui.basic.LocalizedMessage original="Master" locale="zh_CN" localized="主实体定义"/>
+    <moqui.basic.LocalizedMessage original="From Date" locale="zh_CN" localized="开始日期"/>
+    <moqui.basic.LocalizedMessage original="Thru Date" locale="zh_CN" localized="结束日期"/>
+    <moqui.basic.LocalizedMessage original="Filter Map" locale="zh_CN" localized="过滤Map"/>
+    <moqui.basic.LocalizedMessage original="File Type" locale="zh_CN" localized="文件类型"/>
+    <moqui.basic.LocalizedMessage original="Output" locale="zh_CN" localized="输出"/>
+    <moqui.basic.LocalizedMessage original="Path" locale="zh_CN" localized="路径"/>
+
+    <moqui.basic.LocalizedMessage original="Service" locale="zh_CN" localized="服务"/>
+    <moqui.basic.LocalizedMessage original="Service Reference" locale="zh_CN" localized="服务引用"/>
+    <moqui.basic.LocalizedMessage original="Service Name" locale="zh_CN" localized="服务名称"/>
+    <moqui.basic.LocalizedMessage original="Run Service" locale="zh_CN" localized="运行服务"/>
+    <moqui.basic.LocalizedMessage original="Service Name(path.verb#noun)" locale="zh_CN" localized="服务名称（路径.动词#名词）"/>
+
+    <moqui.basic.LocalizedMessage original="Service Run" locale="zh_CN" localized="服务运行"/>
+    <moqui.basic.LocalizedMessage original="Select Service" locale="zh_CN" localized="选择服务"/>
 
 </entity-facade-xml>
