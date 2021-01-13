@@ -636,7 +636,7 @@ Vue.component('m-form', {
                 setTimeout(function() { $btn.prop('disabled', false); }, 3000);
             }
             var formData = Object.keys(this.fields).length ? new FormData() : new FormData(this.$refs.qForm.$el);
-            $.each(this.fields, function(key, value) { formData.set(key, value); });
+            $.each(this.fields, function(key, value) { formData.set(key, value || ""); });
             // NOTE: using iterator directly to avoid using 'for of' which requires more recent ES version (for minify, browser compatibility)
             var formDataIterator = formData.entries()[Symbol.iterator]();
             while (true) {
@@ -2272,7 +2272,7 @@ window.addEventListener('popstate', function() { moqui.webrootVue.setUrl(window.
 // NOTE: simulate vue-router so this.$router.resolve() works in a basic form; required for use of q-btn 'to' attribute along with router-link component defined above
 moqui.webrootRouter = {
     resolve: function resolve(to, current, append) {
-        var location = moqui.isString(to) ? location = moqui.parseHref(to) : location = to;
+        var location = moqui.isString(to) ? moqui.parseHref(to) : to;
 
         var path = location.path;
         if (moqui.webrootVue) location.path = path = moqui.webrootVue.getLinkPath(path);
