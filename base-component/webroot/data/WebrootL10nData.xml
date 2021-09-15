@@ -16,7 +16,15 @@ along with this software (see the LICENSE.md file). If not, see
     <moqui.basic.LocalizedMessage locale="default" original="PaginationTemplate"
             localized="Page ${curPageIndex + 1} of ${curPageMaxIndex + 1} (${context[listName + 'PageRangeLow']} - ${context[listName + 'PageRangeHigh']} of ${context[listName + 'Count']})"/>
 
-    <moqui.basic.LocalizedMessage original="Choose an Application" locale="en" localized="Y&amp;Y Insight Enterprise Application Platform "/>
+    <moqui.basic.LocalizedMessage original="Enter your username and password to sign in" locale="zh_CN" localized="请输入用户名和密码以登录系统"/>
+    <moqui.basic.LocalizedMessage original="Username" locale="zh_CN" localized="用户名"/>
+    <moqui.basic.LocalizedMessage original="Password" locale="zh_CN" localized="密码"/>
+    <moqui.basic.LocalizedMessage original="Sign in" locale="zh_CN" localized="登录"/>
+    <moqui.basic.LocalizedMessage original="Login" locale="zh_CN" localized="登录"/>
+    <moqui.basic.LocalizedMessage original="Reset Password" locale="zh_CN" localized="重置密码"/>
+    <moqui.basic.LocalizedMessage original="Change Password" locale="zh_CN" localized="修改密码"/>
+
+    <moqui.basic.LocalizedMessage original="Choose an Application" locale="en" localized="YPlus Insight Enterprise Application Platform "/>
     <moqui.basic.LocalizedMessage original="Choose an Application" locale="zh_CN" localized="企业应用平台"/>
     <moqui.basic.LocalizedMessage original="Applications" locale="zh_CN" localized="企业应用平台"/>
     <moqui.basic.LocalizedMessage original="App List" locale="zh_CN" localized="应用列表"/>
