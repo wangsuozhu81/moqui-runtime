@@ -230,5 +230,9 @@ along with this software (see the LICENSE.md file). If not, see
 
     <moqui.basic.LocalizedMessage original="Service Run" locale="zh_CN" localized="服务运行"/>
     <moqui.basic.LocalizedMessage original="Select Service" locale="zh_CN" localized="选择服务"/>
+    <moqui.basic.LocalizedMessage original="Search String Reference" locale="zh_CN" localized="搜索字符指引"/>
+    <moqui.basic.LocalizedMessage original="Current Search String" locale="zh_CN" localized="当前搜索字符"/>
+    <moqui.basic.LocalizedMessage original="No Current Search" locale="zh_CN" localized="当前无搜索"/>
+
 
 </entity-facade-xml>

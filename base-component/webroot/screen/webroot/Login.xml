@@ -85,12 +85,17 @@ along with this software (see the LICENSE.md file). If not, see
                 <condition><expression>ec.entity.find('moqui.security.UserAccount').condition('userId', 'EX_JOHN_DOE')
                     .condition('currentPassword', '16ac58bbfa332c1c55bd98b53e60720bfa90d394').disableAuthz().count()</expression></condition>
                 <widgets><render-mode><text type="html"><![CDATA[
-                <form method="post" action="${sri.buildUrl("login").url}" id="TestLoginLink">
+                <form method="post" action="${sri.buildUrl("login").url}" id="TestLoginAdmin">
                     <input type="hidden" name="username" value="john.doe">
                     <input type="hidden" name="password" value="moqui">
-                    <button class="btn btn-sm btn-primary" type="submit" id="TestLoginLink_button">Test Login (John Doe)</button>
+                    <button class="btn btn-sm btn-primary" type="submit" id="TestLoginAdmin_button">Test Login (Admin)</button>
                 </form>
-                <script>$("#TestLoginLink_button").focus();</script>
+                <form method="post" action="${sri.buildUrl("login").url}" id="TestLoginDemo">
+                    <input type="hidden" name="username" value="demo">
+                    <input type="hidden" name="password" value="moqui">
+                    <button class="btn btn-sm btn-primary" type="submit" id="TestLoginDemo_button">Test Login (Demo)</button>
+                </form>
+                <script>$("#TestLoginDemo_button").focus();</script>
                 ]]></text></render-mode></widgets>
             </section>
         </container></container></container>

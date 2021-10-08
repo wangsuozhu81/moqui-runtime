@@ -76,4 +76,21 @@ along with this software (see the LICENSE.md file). If not, see
     <moqui.basic.LocalizedMessage original="Screen History" locale="zh_CN" localized="访问历史"/>
     <moqui.basic.LocalizedMessage original="Switch Dark/Light" locale="zh_CN" localized="切换暗黑/明亮模式"/>
     <moqui.basic.LocalizedMessage original="Logout" locale="zh_CN" localized="注销"/>
+
+    <moqui.basic.LocalizedMessage original="Saved Finds" locale="zh_CN" localized="已存搜索"/>
+    <moqui.basic.LocalizedMessage original="ID" locale="zh_CN" localized="编号"/>
+    <moqui.basic.LocalizedMessage original="Role" locale="zh_CN" localized="角色"/>
+    <moqui.basic.LocalizedMessage original="Class" locale="zh_CN" localized="类别"/>
+    <moqui.basic.LocalizedMessage original="Hidden" locale="zh_CN" localized="隐藏"/>
+    <moqui.basic.LocalizedMessage original="Dups" locale="zh_CN" localized="重复数据"/>
+    <moqui.basic.LocalizedMessage original="Matches" locale="zh_CN" localized="匹配"/>
+    <moqui.basic.LocalizedMessage original="Role Type ID" locale="zh_CN" localized="角色类型编号"/>
+
+
+
+
+
+
+
+
 </entity-facade-xml>
