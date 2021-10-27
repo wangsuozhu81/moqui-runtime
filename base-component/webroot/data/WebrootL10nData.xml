@@ -70,7 +70,6 @@ along with this software (see the LICENSE.md file). If not, see
     <moqui.basic.LocalizedMessage original="Days" locale="zh_CN" localized="天"/>
     <moqui.basic.LocalizedMessage original="Week" locale="zh_CN" localized="周"/>
     <moqui.basic.LocalizedMessage original="Weeks" locale="zh_CN" localized="周"/>
-    <moqui.basic.LocalizedMessage original="Active Organization" locale="zh_CN" localized="活动组织"/>
 
     <moqui.basic.LocalizedMessage original="Notify History" locale="zh_CN" localized="通知历史"/>
     <moqui.basic.LocalizedMessage original="Screen History" locale="zh_CN" localized="访问历史"/>

@@ -181,5 +181,6 @@ along with this software (see the LICENSE.md file). If not, see
         // loading: {...}, // default set of options for Loading Quasar plugin
         loadingBar: { color:'primary' }, // settings for LoadingBar Quasar plugin
         // ..and many more (check Installation card on each Quasar component/directive/plugin)
-    }
+
+    };
 </script>
