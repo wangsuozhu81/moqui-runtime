@@ -80,9 +80,6 @@
 
     <entity-facade crypt-pass="${entity_ds_crypt_pass}"  query-stats="true">
         <!-- add datasource elements here to configure databases -->
-        <datasource group-name="">
-            <
-        </datasource>
     </entity-facade>
 
     <repository-list>
